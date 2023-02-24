@@ -224,39 +224,6 @@ position: absolute;
   display: flex;
   justify-content: center;
 }
-.levitate-container h1,
-.sdsu-container h1{
-  display: flex;
-  font-size: 45px;
-  /* background-color: yellow; */
-  justify-content: left;
-  width: 95%;
-}
-.levitate-container p{
-  display: flex;
-  font-size: 20px;
-  justify-content: left;
-  text-align: left;
-  width: 95%;
-  margin-top: -50px;
-}
-.levitate-images-container{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  gap: 60px;
-  width: 95%;
-}
-.levitate-video-container{
-  display: flex;
-  margin-right: 60px;
-}
-.levitate-images-container img{
-  height: auto;
-  width: 300px;
-  border-radius: 20px;
-}
 .aboutme-picture-container{
   display: flex;
   width: 300px;
