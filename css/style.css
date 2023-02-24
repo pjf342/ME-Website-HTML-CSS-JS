@@ -9,7 +9,7 @@ body{
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 500vh;
+  height: 150vh;
   background-position: center;
   background-size: cover;
 }
@@ -201,8 +201,7 @@ position: absolute;
   display: flex;
   flex-direction: row;
 }
-.levitate-container,
-.sdsu-container,
+.tabcontent,
 .aboutme-body-container{
   display: flex;
   width: 85%;
@@ -222,7 +221,56 @@ position: absolute;
 }
 .portfolio-tabs-container{
   display: flex;
+  justify-content: left;
+  align-self: center;
+  /* background-color: yellow; */
+  width: 75%;
+  gap: 1px;
+}
+.tablink:hover{
+  background-color: #43566d;
+}
+.tablink{
+  width: auto;
+  height: fit-content;
+  font-size: 25px;
+  background-color: #294b6d;
+  border: none;
+  border-radius: 10px 10px 0 0;
+}
+.tablink.active{
+  background-color: #1f2833;
+}
+.tabcontent h1{
+  display: flex;
+  font-size: 45px;
+  justify-content: left;
+  width: 95%;
+}
+.tabcontent p{
+  display: flex;
+  font-size: 20px;
+  justify-content: left;
+  text-align: left;
+  width: 95%;
+  margin-top: -50px;
+}
+.levitate-images-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
+  gap: 60px;
+  width: 95%;
+}
+.levitate-video-container{
+  display: flex;
+  margin-right: 60px;
+}
+.levitate-images-container img{
+  height: auto;
+  width: 300px;
+  border-radius: 20px;
 }
 .aboutme-picture-container{
   display: flex;

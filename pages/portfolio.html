@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,11 +54,11 @@
                 <h1>Portfolio</h1>
             </div>
             <div class="portfolio-tabs-container">
-                <button class="tab-link" onclick="openPortfolio(event, 'Levitate')">Levitate Technologies</button>
-                <button class="tab-link" onclick="openPortfolio(event, 'SDSU')">SDSU Research Assistant</button>
-                <button class="tab-link" onclick="openPortfolio(event, 'Misc')">Miscellaneous Works</button>
+                <button class="tablink" onclick="openPortfolio(event, 'Levitate')" id="defaulttab">Levitate Technologies</button>
+                <button class="tablink" onclick="openPortfolio(event, 'SDSU')">SDSU Research Assistant</button>
+                <button class="tablink" onclick="openPortfolio(event, 'Misc')">Miscellaneous Works</button>
             </div>  
-            <div id="Levitate" class="tab-content">
+            <div id="Levitate" class="tabcontent">
                 <h1>Levitate Technologies, Inc - Senior Design</h1>
                 <p> At Levitate Technologies, the task was to create a new mechanism for 
                     arm rotation that can easily be integrated into their current arm support 
@@ -86,11 +86,13 @@
                     </div>
                 </div>
             </div>
-            <div id="SDSU" class="tab-content">
+            <div id="SDSU" class="tabcontent">
                 <h1>San Diego State University - Undergraduate Research Assistant</h1>
+                <p>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST </p>
             </div>
-            <div id="Misc" class="tab-content">
+            <div id="Misc" class="tabcontent">
                 <h1>Miscellaneous Works</h1>
+                <p>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST </p>
             </div>
         </div>
 
@@ -99,6 +101,7 @@
         </div>
         
     </div>
+    <script src="../javascript/js.js"></script>
 </body>
 
 </html>
