@@ -228,13 +228,13 @@ position: absolute;
   gap: 1px;
 }
 .tablink:hover{
-  background-color: #43566d;
+  background-color: #294b6d;
 }
 .tablink{
   width: auto;
   height: fit-content;
   font-size: 25px;
-  background-color: #294b6d;
+  background-color: #43566d;
   border: none;
   border-radius: 10px 10px 0 0;
 }
