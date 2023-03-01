@@ -25,6 +25,7 @@ body{
   justify-content: space-between;
   align-items: center;
   justify-items: center;
+  padding: 5px;
 }
 .header a,
 .header p{
@@ -38,15 +39,17 @@ body{
   border-radius: 50px;
   border: 3px inset lightblue;
   margin-left: 50px;
-  
+  transition: transform 0.3s ease-in-out;
 }
 
-.logo-container img {
+.logo-container img{
   width: 80px;
   height: 80px;
   border-radius: 50px;
 }
-
+.logo-container:hover{
+  transform: rotate(360deg);
+}
 .dropdown-container{
   display: flex;
   flex-direction: column;
@@ -257,6 +260,7 @@ position: absolute;
 }
 .levitate-images-container{
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
