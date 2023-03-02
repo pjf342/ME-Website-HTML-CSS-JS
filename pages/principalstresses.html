@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
-    <title>Contact</title>
+    <title>Calculators</title>
 </head>
 
 <body>
@@ -17,6 +17,9 @@
             <div class="logo-container">
                 <a href="/pages/index.html"><img src="../images/gearlogo.png" class="logo"></a>
             </div>
+
+            
+        
             <div class="dropdown-container">
                 <div class="hover-div">
                     <button><a href="/pages/calculators.html">Calculators &#9660;</a></button>
@@ -48,20 +51,18 @@
 
         <div class="middle-container">
             <div class="middle-header-container">
-                <h1>Contact</h1>
+                <h1>Principal Stresses</h1>
             </div>
-            <div class="contact-body-container">
-                <div class="contact-email-container">
-                    <img src="../images/email-logo.png" alt="email-logo"> 
-                    <a alt="email-text">patrick.fleckenstein@outlook.com</a>
-                </div>
-                <div class="contact-links-container">
-                    <a href="https://www.linkedin.com/in/patrick-fleckenstein-00710b204/" target="_blank"><img src="../images/linkedin-logo.png" alt="linkedin-logo"></a>
-                    <a href="https://github.com/pjf342" target="_blank"><img src="../images/github-logo-white.png" alt="github-logo-white"></a>
-                </div>
-
-                
-            </div>  
+            <div class="submission-container">
+                    <label for="sigmaX" id="sigmax-label">Sigma X</label>
+                    <input class="box" type="number" id="sigmaX" value="0">
+                    <label for="sigmaY" id="sigmay-label">Sigma Y</label>
+                    <input class="box" type="number" id="sigmaY" value="0">
+                    <label for="tauXY" id="tauxy-label">Tau XY</label>
+                    <input class="box" type="number" id="tauXY" value="0">
+                    <button type="button" id="submit-btn">Calculate</button>
+            </div>
+            
         </div>
 
         <div class="footer">
@@ -75,7 +76,7 @@
         </div>
         
     </div>
-    <script src="../javascript/script.js"></script>
+    <script src="../javascript/ps-script.js"></script>
 </body>
 
 </html>

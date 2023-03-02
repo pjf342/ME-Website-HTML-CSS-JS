@@ -130,7 +130,7 @@ position: absolute;
   display: flex;
   flex-direction: column;
   background:linear-gradient(rgb(202, 194, 194), #1f2833);
-  min-height: 1000px;
+  min-height: 950px;
   flex: 1;
   padding-bottom: 200px;
 }
@@ -204,28 +204,24 @@ position: absolute;
   color: white;
   width: 85%;
 }
-.portfolio-header-container,
-.aboutme-header-container,
-.contact-header-container,
-.calculator-header-container{
+.middle-header-container{
   display: flex;
   align-self: center;
   height: 185px;
+  width: fit-content;
 }
-.portfolio-header-container h1,
-.aboutme-header-container h1,
-.contact-header-container h1,
-.calculator-header-container h1{
-  display: flex;
-  flex-direction: row;
+.middle-header-container h1{
   align-items: center;
   justify-content: center;
   font-size: 65px;
   background-color: #1f2833;
   color: white;
-  width: 325px;
-  height: 100px;
+  width: fit-content;
+  height: fit-content;
   border-radius: 50px;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .levitate-media-container{
   display: flex;
@@ -316,7 +312,7 @@ position: absolute;
 }
 .levitate-images-container img{
   height: max-content;
-  width: 350px;
+  width: 500px;
 }
 .aboutme-picture-container{
   display: flex;
@@ -484,4 +480,43 @@ position: absolute;
 .matlab-media-container img{
   height: 300px;
   width: max-content;
+}
+.submission-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  min-width: 200px;
+  max-width: 230px;
+  height: max-content;
+  padding: 40px;
+  background-color: #1f2833;
+  border-radius: 20px;
+  align-self: left;
+  margin-left: 100px;
+}
+.submission-container input{
+  color: black;
+  font-size: 20px;
+  width: 120px;
+  height: max-content;
+}
+.submission-container label{
+  color: white;
+  font-size: 20px;
+  width: max-content;
+  height: max-content;
+}
+.submission-container button{
+  height: max-content;
+  width: max-content;
+  color: black;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 8px;
+}
+.submission-container button:hover{
+  background-color: #294b6d;
+  color: white;
 }
