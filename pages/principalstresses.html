@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,22 +18,26 @@
             <div class="logo-container">
                 <a href="/pages/index.html"><img src="../images/gearlogo.png" class="logo"></a>
             </div>
-
-            
-        
             <div class="dropdown-container">
                 <div class="hover-div">
                     <button><a href="/pages/calculators.html">Calculators &#9660;</a></button>
                     <div class="list-container">
-                        <div class="item1"><a href="#"><p>Link 1</p></a></div>
-                        <div class="item1"><a href="#"><p>Link 2</p></a></div>
-                        <div class="item1"><a href="#"><p>Link 3</p></a></div>
-                        <div class="item1"><a href="#"><p>Link 4</p></a></div>
-                            
-                    </div>
-                </div>   
-            </div>
+                        <div class="item1"><a href="../pages/principalstresses.html">
+                                <p>2D Principal Stresses</p>
+                            </a></div>
+                        <div class="item1"><a href="#">
+                                <p>Link 2</p>
+                            </a></div>
+                        <div class="item1"><a href="#">
+                                <p>Link 3</p>
+                            </a></div>
+                        <div class="item1"><a href="#">
+                                <p>Link 4</p>
+                            </a></div>
 
+                    </div>
+                </div>
+            </div>
             <div class="links-container">
 
                 <div class="portfolio-container">
@@ -41,40 +46,43 @@
                 <div class="aboutme-container">
                     <button><a href="/pages/aboutme.html">About Me</a></button>
                 </div>
-    
+
                 <div class="contact-container">
                     <button><a href="/pages/contact.html">Contact</a></button>
                 </div>
 
             </div>
         </div>
-
         <div class="middle-container">
             <div class="middle-header-container">
-                <h1>Principal Stresses</h1>
+                <h1>2D Principal Stresses</h1>
             </div>
             <div class="submission-container">
-                    <label for="sigmaX" id="sigmax-label">Sigma X</label>
-                    <input class="box" type="number" id="sigmaX" value="0">
-                    <label for="sigmaY" id="sigmay-label">Sigma Y</label>
-                    <input class="box" type="number" id="sigmaY" value="0">
-                    <label for="tauXY" id="tauxy-label">Tau XY</label>
-                    <input class="box" type="number" id="tauXY" value="0">
-                    <button type="button" id="submit-btn">Calculate</button>
+                <label for="sigmaX" id="sigmax-label">Sigma X</label>
+                <input class="box" type="number" id="sigmaX" value="0">
+                <label for="sigmaY" id="sigmay-label">Sigma Y</label>
+                <input class="box" type="number" id="sigmaY" value="0">
+                <label for="tauXY" id="tauxy-label">Tau XY</label>
+                <input class="box" type="number" id="tauXY" value="0">
+                <button type="button" id="submit-btn">Calculate</button>
+            </div> 
+            <div class="results-container">
+                <p></p>
             </div>
-            
-        </div>
 
+        </div>
         <div class="footer">
             <div class="copyright-name-container">
-                <p>Copyright &#169 2023 Design by</p><a href="mailto:patrick.fleckenstein@outlook.com">Patrick Fleckenstein</a>
+                <p>Copyright &#169 2023 Design by</p><a href="mailto:patrick.fleckenstein@outlook.com">Patrick
+                    Fleckenstein</a>
             </div>
             <div class="marks-container">
-                <a href="https://www.linkedin.com/in/patrick-fleckenstein-00710b204/" target="_blank"><img src="../images/linkedin-mark.png" alt="linkedin-mark"></a>
-                <a href="https://github.com/pjf342" target="_blank"><img src="../images/github-mark-white.png" alt="github-mark-white"></a>
+                <a href="https://www.linkedin.com/in/patrick-fleckenstein-00710b204/" target="_blank"><img
+                        src="../images/linkedin-mark.png" alt="linkedin-mark"></a>
+                <a href="https://github.com/pjf342" target="_blank"><img src="../images/github-mark-white.png"
+                        alt="github-mark-white"></a>
             </div>
         </div>
-        
     </div>
     <script src="../javascript/ps-script.js"></script>
 </body>
