@@ -1,11 +1,21 @@
-// Query all boxes
-// const boxes = document.querySelectorAll('.box');
-
 // Query the submit button
 const btn = document.querySelector('#submit-btn');
-// console.log(btn);
+
 const button = document.getElementById('submit-btn')
                         .addEventListener('click', testfn);
+
+
+function testfn() {
+    var sigmaX, sigmaY, tauXY;
+    sigmaX = Math.floor(document.getElementById('sigmaX').value);
+    sigmaY = Math.floor(document.getElementById('sigmaY').value);
+    multiple = sigmaX * sigmaY;
+    console.log(multiple);
+}
+
+
+// Query all boxes
+// const boxes = document.querySelectorAll('.box');
 
 // For every input box add a listener when a value is changed.
 // boxes.forEach(box => {
@@ -34,10 +44,3 @@ const button = document.getElementById('submit-btn')
 //     tau.value = (sigX + sigY);
 //     return tau.value;
 // }
-function testfn() {
-    var sigmaX, sigmaY, tauXY;
-    sigmaX = Math.floor(document.getElementById('sigmaX').value);
-    sigmaY = Math.floor(document.getElementById('sigmaY').value);
-    multiple = sigmaX * sigmaY;
-    console.log(multiple);
-}
