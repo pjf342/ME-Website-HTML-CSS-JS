@@ -22,7 +22,15 @@ function principalStresses() {
     tMax = Math.sqrt(Math.pow(((sX - sY) / 2), 2) + (Math.pow(tXY,2))); //in-plane shear stress
     shearPhi1 = radiansToDegrees(Math.atan(-(((sX - sY) / 2) / tXY))) / 2; //angle to reach max shear stress 1
     shearPhi2 = shearPhi1 + 90; //angle to reach max shear stress 1
-    console.log(shearPhi1, shearPhi2);
+    
+    document.getElementById('sAvg').innerText = sAvg;
+    document.getElementById('s1').innerText = s1;
+    document.getElementById('s2').innerText = s2;
+    document.getElementById('phi1').innerText = phi1;
+    document.getElementById('phi2').innerText = phi2;
+    document.getElementById('tMax').innerText = tMax;
+    document.getElementById('shearPhi1').innerText = shearPhi1;
+    document.getElementById('shearPhi2').innerText = shearPhi2;
 } 
 
 function radiansToDegrees(radians){

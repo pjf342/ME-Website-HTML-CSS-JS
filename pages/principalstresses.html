@@ -57,17 +57,38 @@
             <div class="middle-header-container">
                 <h1>2D Principal Stresses</h1>
             </div>
-            <div class="submission-container">
-                <label for="sigmaX" id="sigmax-label">Sigma X</label>
-                <input class="box" type="number" id="sigmaX" value="0">
-                <label for="sigmaY" id="sigmay-label">Sigma Y</label>
-                <input class="box" type="number" id="sigmaY" value="0">
-                <label for="tauXY" id="tauxy-label">Tau XY</label>
-                <input class="box" type="number" id="tauXY" value="0">
-                <button type="button" id="submit-btn">Calculate</button>
-            </div> 
-            <div class="results-container">
-                <p></p>
+            <div class="calculations-container">
+                <div class="submission-container">
+                    <label for="sigmaX" id="sigmax-label">&#963;<sub>X</sub></label>
+                    <input class="box" type="number" id="sigmaX" value="0">
+                    <label for="sigmaY" id="sigmay-label">&#963;<sub>Y</sub></label>
+                    <input class="box" type="number" id="sigmaY" value="0">
+                    <label for="tauXY" id="tauxy-label">&#964;<sub>XY</sub></label>
+                    <input class="box" type="number" id="tauXY" value="0">
+                    <button type="button" id="submit-btn">Calculate</button>
+                </div> 
+                <div class="results-container">
+                    <div class="results-label-container">
+                        <p>Average Normal Stress:</p>
+                        <p>Principal Stress 1:</p>
+                        <p>Principal Stress 2:</p>
+                        <p>Angle to Reach Principal Stress 1:</p>
+                        <p>Angle to Reach Principal Stress 2:</p>
+                        <p>Maximum Shear Stress:</p>
+                        <p>Angle to Reach Max Shear Stress 1:</p>
+                        <p>Angle to Reach Max Shear Stress 2:</p>
+                    </div>
+                    <div class="results-value-container">
+                        <p id="sAvg"></p>
+                        <p id="s1"></p>
+                        <p id="s2"></p>
+                        <p id="phi1"></p>
+                        <p id="phi2"></p>
+                        <p id="tMax"></p>
+                        <p id="shearPhi1"></p>
+                        <p id="shearPhi2"></p>        
+                    </div>
+                </div>
             </div>
 
         </div>

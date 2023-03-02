@@ -481,6 +481,12 @@ position: absolute;
   height: 300px;
   width: max-content;
 }
+.calculations-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
 .submission-container{
   display: flex;
   flex-direction: row;
@@ -519,4 +525,27 @@ position: absolute;
 .submission-container button:hover{
   background-color: #294b6d;
   color: white;
+}
+.results-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 100px;
+  min-width: 550px;
+  height: max-content;
+  padding: 40px;
+  background-color: #1f2833;
+  border-radius: 20px;
+  align-self: left;
+  margin-left: 100px;
+}
+.results-container p{
+  font-size: 20px;
+  white-space: nowrap;
+  line-height: 300%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
