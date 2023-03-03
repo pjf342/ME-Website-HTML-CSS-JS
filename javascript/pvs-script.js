@@ -37,6 +37,10 @@ function pressureVesselStresses(){
     calculateRadialStress();
     calculateAxialStress();
 
+    document.getElementById('tstress').innerHTML = tangentialstress;
+    document.getElementById('rstress').innerHTML = radialstress;
+    document.getElementById('astress').innerHTML = axialstress;
+
     function calculateTangentialStress(){
     if (thickwall === 0){
         if (pouter != 0){

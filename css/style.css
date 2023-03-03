@@ -531,7 +531,7 @@ position: absolute;
 }
 .submission-input-container{
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   gap: 20px;
 }
 .results-container{
@@ -541,7 +541,9 @@ position: absolute;
   gap: 10px;
   width: max-content;
   height: max-content;
-  padding: 40px;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   background-color: #1f2833;
   border-radius: 20px;
   align-self: left;
@@ -558,6 +560,7 @@ position: absolute;
   width: 100%;
   height: max-content;
   gap: 30px;
+  justify-content: space-between;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
