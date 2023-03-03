@@ -484,22 +484,24 @@ position: absolute;
 .calculations-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
+}
+.calculations-container select, option{
+  color: black;
+  font-size: 20px;
 }
 .submission-container{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   gap: 40px;
-  min-width: 200px;
-  max-width: 230px;
+  width: 280px;
   height: max-content;
-  padding: 40px;
   background-color: #1f2833;
   border-radius: 20px;
-  align-self: left;
-  margin-left: 100px;
+  margin-bottom: 40px;
+  padding: 30px;
 }
 .submission-container input{
   color: black;
@@ -521,10 +523,16 @@ position: absolute;
   border-radius: 8px;
   font-size: 20px;
   padding: 8px;
+  align-self: center;
 }
 .submission-container button:hover{
   background-color: #43566d;
   color: white;
+}
+.submission-input-container{
+  display: flex;
+  justify-content: right;
+  gap: 20px;
 }
 .results-container{
   display: flex;
