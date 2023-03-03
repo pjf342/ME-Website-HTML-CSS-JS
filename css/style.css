@@ -536,10 +536,10 @@ position: absolute;
 }
 .results-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
-  gap: 100px;
-  min-width: 550px;
+  gap: 10px;
+  width: max-content;
   height: max-content;
   padding: 40px;
   background-color: #1f2833;
@@ -550,7 +550,14 @@ position: absolute;
 .results-container p{
   font-size: 20px;
   white-space: nowrap;
-  line-height: 300%;
+}
+.results-label-container{
+  display: flex;
+  color: black;
+  font-size: 20px;
+  width: 100%;
+  height: max-content;
+  gap: 30px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
