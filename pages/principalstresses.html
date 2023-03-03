@@ -21,7 +21,7 @@
                     <button><a href="/pages/calculators.html">Calculators &#9660;</a></button>
                     <div class="list-container">
                         <div class="item1"><a href="../pages/principalstresses.html"><p>2D Principal Stresses</p></a></div>
-                        <div class="item1"><a href="../pages/pressurevesselstress.html"><p>Pressure Vessel Stress</p></a></div>
+                        <div class="item1"><a href="../pages/pressurevesselstress.html"><p>Cylinderical Pressure Vessel Stress</p></a></div>
                         <div class="item1"><a href="../pages/columnfailure.html"><p>Column Failure</p></a></div>
                         <div class="item1"><a href="../pages/strengthandcoldwork.html"><p>Strength and Cold Work</p></a></div>
                     </div>
@@ -48,12 +48,21 @@
             </div>
             <div class="calculations-container">
                 <div class="submission-container">
-                    <label for="sigmaX" id="sigmax-label">&#963;<sub>X</sub></label>
-                    <input class="box" type="number" id="sigmaX" value="0">
-                    <label for="sigmaY" id="sigmay-label">&#963;<sub>Y</sub></label>
-                    <input class="box" type="number" id="sigmaY" value="0">
-                    <label for="tauXY" id="tauxy-label">&#964;<sub>XY</sub></label>
-                    <input class="box" type="number" id="tauXY" value="0">
+                    <div class="submission-input-container">
+                        <label for="sigmaX" id="sigmax-label">&#963;<sub>X</sub></label>
+                        <input class="box" type="number" id="sigmaX" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="sigmaY" id="sigmay-label">&#963;<sub>Y</sub></label>
+                        <input class="box" type="number" id="sigmaY" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="tauXY" id="tauxy-label">&#964;<sub>XY</sub></label>
+                        <input class="box" type="number" id="tauXY" value="0">
+                    </div>
+                    
+                    
+                    
                     <button type="button" id="submit-btn">Calculate</button>
                 </div> 
                 <div class="results-container">
