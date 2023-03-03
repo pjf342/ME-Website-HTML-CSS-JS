@@ -515,15 +515,15 @@ position: absolute;
 }
 .submission-container button{
   height: max-content;
-  width: max-content;
-  color: black;
+  width: 200px;
+  background-color: #294b6d;
+  color: white;
   border-radius: 8px;
   font-size: 20px;
-  font-weight: 900;
   padding: 8px;
 }
 .submission-container button:hover{
-  background-color: #294b6d;
+  background-color: #43566d;
   color: white;
 }
 .results-container{
@@ -548,4 +548,44 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.calculator-card-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+}
+.calculator-card-container img{
+  width: 300px;
+  height: fit-content;
+  border-radius: 30px;
+}
+.calculator-card-container p{
+width: 100%;
+}
+.calculator-card-container button{
+  width: 150px;
+  height: max-content;
+  padding: 8px;
+  background-color: #294b6d;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.calculator-card-container button:hover{
+  background-color: #43566d;
+}
+.principalstresses-card-container,
+.pressurevesselstress-card-container,
+.columnfailure-card-container,
+.strengthandcoldwork-card-container{
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  width: 300px;
+  background-color: #1f2833;
+  justify-content: top;
+  align-items: center;
+  padding: 20px;
+  border-radius: 30px;
 }
