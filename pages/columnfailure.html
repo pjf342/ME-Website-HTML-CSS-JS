@@ -50,31 +50,17 @@
             <div class="calculations-container">
                 <div class="submission-container">
                     <div class="submission-input-container">
-                        <label for="base-value" id="base-label">Base (mm)</label>
-                        <input type="number" id="base-value" value="0">
+                        <label for="geometry-selection" id="geometry-label">Geometry</label>
+                        <select id="geometry-selection" value="0">
+                            <option value="0">Hollow Rectangle</option>
+                            <option value="1">Solid Rectangle</option>
+                            <option value="2">Hollow Circle</option>
+                            <option value="3">Solid Circle</option>
+                            <option value="4">Symmetrical I-Beam</option>
+                        </select>
                     </div>
                     <div class="submission-input-container">
-                        <label for="height-value" id="height-label">Height (mm)</label>
-                        <input type="number" id="height-value" value="0">
-                    </div>
-                    <div class="submission-input-container">
-                        <label for="thickness-value" id="thickness-label">Thickness (mm)</label>
-                        <input type="number" id="thickness-value" value="0">
-                    </div>
-                    <div class="submission-input-container">
-                        <label for="length-value" id="length-label">Length (m)</label>
-                        <input type="number" id="length-value" value="0">
-                    </div>
-                    <div class="submission-input-container">
-                        <label for="yieldstrength-value" id="yieldstrength-label">Yield Strength (MPa)</label>
-                        <input type="number" id="yieldstrength-value" value="0">
-                    </div>
-                    <div class="submission-input-container">
-                        <label for="modulusofelasticity-value" id="modulusofelasticity-label">Modulus of Elasticity (GPa)</label>
-                        <input type="number" id="modulusofelasticity-value" value="0">
-                    </div>
-                    <div class="submission-input-container">
-                        <label for="boundarycondition-value" id="boundarycondition-label">Boundary Condition</label>
+                        <label for="boundarycondition-selection" id="boundarycondition-label">Boundary Condition</label>
                         <select id="boundarycondition-selection" value="0">
                             <option value="0">Fixed-free</option>
                             <option value="1">Rounded-rounded</option>
@@ -83,12 +69,40 @@
                         </select>
                     </div>
                     <div class="submission-input-container">
-                        <label for="endcondition-value" id="endcondition-label">End Condition</label>
+                        <label for="endcondition-selection" id="endcondition-label">End Condition</label>
                         <select id="endcondition-selection" value="0">
                             <option value="0">Theoretical Value</option>
                             <option value="1">Conservative Value</option>
                             <option value="2">Recommended Value</option>
                         </select>
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="input1" id="inputlabel1">Base (mm)</label>
+                        <input type="number" id="input1" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="input2" id="inputlabel2">Height (mm)</label>
+                        <input type="number" id="input2" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="input3" id="inputlabel3">Thickness (mm)</label>
+                        <input type="number" id="input3" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="input4" id="inputlabel4">Length (m)</label>
+                        <input type="number" id="input4" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="input5" id="inputlabel5">Yield Strength (MPa)</label>
+                        <input type="number" id="input5" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="input6" id="inputlabel6">Modulus of Elasticity (GPa)</label>
+                        <input type="number" id="input6" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="input7" id="inputlabel7">Modulus of Elasticity (GPa)</label>
+                        <input type="number" id="input7" value="0">
                     </div>
                     <button id="submit-btn">Calculate</button>
                 </div> 
