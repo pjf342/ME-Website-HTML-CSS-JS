@@ -308,6 +308,7 @@ position: absolute;
 }
 .aboutme-body-container p{
   font-size: 30px;
+  padding: 30px;
 }
 .sdsu1-media-container{
   display: flex;
