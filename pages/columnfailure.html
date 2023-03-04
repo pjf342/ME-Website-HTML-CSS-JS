@@ -50,8 +50,45 @@
             <div class="calculations-container">
                 <div class="submission-container">
                     <div class="submission-input-container">
-                        <label for="dinner-value" id="dinner-label">Inner Diameter</label>
-                        <input type="number" id="dinner-value" value="0">
+                        <label for="base-value" id="base-label">Base (mm)</label>
+                        <input type="number" id="base-value" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="height-value" id="height-label">Height (mm)</label>
+                        <input type="number" id="height-value" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="thickness-value" id="thickness-label">Thickness (mm)</label>
+                        <input type="number" id="thickness-value" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="length-value" id="length-label">Length (m)</label>
+                        <input type="number" id="length-value" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="yieldstrength-value" id="yieldstrength-label">Yield Strength (MPa)</label>
+                        <input type="number" id="yieldstrength-value" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="modulusofelasticity-value" id="modulusofelasticity-label">Modulus of Elasticity (GPa)</label>
+                        <input type="number" id="modulusofelasticity-value" value="0">
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="boundarycondition-value" id="boundarycondition-label">Boundary Condition</label>
+                        <select id="boundarycondition-selection" value="0">
+                            <option value="0">Fixed-free</option>
+                            <option value="1">Rounded-rounded</option>
+                            <option value="2">Fixed-rounded</option>
+                            <option value="3">Fixed-fixed</option>
+                        </select>
+                    </div>
+                    <div class="submission-input-container">
+                        <label for="endcondition-value" id="endcondition-label">End Condition</label>
+                        <select id="endcondition-selection" value="0">
+                            <option value="0">Theoretical Value</option>
+                            <option value="1">Conservative Value</option>
+                            <option value="2">Recommended Value</option>
+                        </select>
                     </div>
                     <button id="submit-btn">Calculate</button>
                 </div> 
