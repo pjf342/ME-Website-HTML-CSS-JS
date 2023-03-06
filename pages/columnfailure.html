@@ -51,12 +51,12 @@
                 <div class="submission-container">
                     <div class="submission-input-container">
                         <label for="geometry-selection" id="geometry-label">Geometry</label>
-                        <select id="geometry-selection" value="0">
+                        <select id="geometry-selection" value="4">
+                            <option value="4">Symmetrical I-Beam</option>
                             <option value="0">Hollow Rectangle</option>
                             <option value="1">Solid Rectangle</option>
                             <option value="2">Hollow Circle</option>
                             <option value="3">Solid Circle</option>
-                            <option value="4">Symmetrical I-Beam</option>
                         </select>
                     </div>
                     <div class="submission-input-container">
@@ -77,27 +77,27 @@
                         </select>
                     </div>
                     <div class="submission-input-container">
-                        <label for="input1" id="inputlabel1">Base (mm)</label>
+                        <label for="input1" id="inputlabel1">Height (mm)</label>
                         <input type="number" id="input1" value="0">
                     </div>
                     <div class="submission-input-container">
-                        <label for="input2" id="inputlabel2">Height (mm)</label>
+                        <label for="input2" id="inputlabel2">Flange-flange Inner Face Height (mm)</label>
                         <input type="number" id="input2" value="0">
                     </div>
                     <div class="submission-input-container">
-                        <label for="input3" id="inputlabel3">Thickness (mm)</label>
+                        <label for="input3" id="inputlabel3">Width of I-beam (mm)</label>
                         <input type="number" id="input3" value="0">
                     </div>
                     <div class="submission-input-container">
-                        <label for="input4" id="inputlabel4">Length (m)</label>
+                        <label for="input4" id="inputlabel4">Base (m)</label>
                         <input type="number" id="input4" value="0">
                     </div>
                     <div class="submission-input-container">
-                        <label for="input5" id="inputlabel5">Yield Strength (MPa)</label>
+                        <label for="input5" id="inputlabel5">Length of Column</label>
                         <input type="number" id="input5" value="0">
                     </div>
                     <div class="submission-input-container">
-                        <label for="input6" id="inputlabel6">Modulus of Elasticity (GPa)</label>
+                        <label for="input6" id="inputlabel6">Yield Strength (MPa)</label>
                         <input type="number" id="input6" value="0">
                     </div>
                     <div class="submission-input-container">
@@ -109,8 +109,16 @@
 
                 <div class="results-container">
                     <div class="results-label-container">
-                        <p>Tangential Stress:</p>
-                        <p id="tstress"></p>
+                        <p>&#963;<sub>critical</sub>:</p>
+                        <p id="sigmacritical"></p>
+                    </div>
+                    <div class="results-label-container">
+                        <p>Critical Load:</p>
+                        <p id="criticalload"></p>
+                    </div>
+                    <div class="results-label-container">
+                        <p>Factor of Safety:</p>
+                        <p id="fos"></p>
                     </div>
                 </div>
             </div>  

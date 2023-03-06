@@ -1,8 +1,17 @@
 document.getElementById('geometry-selection').addEventListener('change',parameters);
 
 const button = document.getElementById('submit-btn').addEventListener('click', columnFailure);
-
+function resetInputField(){
+    document.getElementById('input1').value = 0;
+    document.getElementById('input2').value = 0;
+    document.getElementById('input3').value = 0;
+    document.getElementById('input4').value = 0;
+    document.getElementById('input5').value = 0;
+    document.getElementById('input6').value = 0;
+    document.getElementById('input7').value = 0;
+}
 function parameters(){
+    resetInputField();
     var geometry;
 
     geometry = Math.floor(document.getElementById('geometry-selection').value);
@@ -126,42 +135,129 @@ function columnFailure() {
 
 function hollowRectangleColumnFailure(){
     var base, height, thickness, length, yieldstrength, elasticity, boundarycondition, endcondition, innerbase,
-    innerheight, cvalue;
+    innerheight, cvalue, determiningslenderness, slendernessratio, Ix, Iy, Imin, area, gyrationradius, sigmacritical,
+    criticalload, technique, factorofsafety;
 
-    boundarycondition = Math.floor(document.getElementById('boundarycondition-selection').value);
-    endcondition = Math.floor(document.getElementById('endcondition-selection').value);
-    base = Math.floor(document.getElementById('input1').value) / 1000;
-    height = Math.floor(document.getElementById('input2').value) / 1000;
-    thickness = Math.floor(document.getElementById('input3').value) / 1000;
-    length = Math.floor(document.getElementById('input4').value);
-    yieldstrength = Math.floor(document.getElementById('input5').value) * 1000000;
-    elasticity = Math.floor(document.getElementById('input6').value) * 1000000000;
+    boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
+    endcondition = parseFloat(document.getElementById('endcondition-selection').value);
+    base = parseFloat(document.getElementById('input1').value) / 1000;
+    height = parseFloat(document.getElementById('input2').value) / 1000;
+    thickness = parseFloat(document.getElementById('input3').value) / 1000;
+    length = parseFloat(document.getElementById('input4').value);
+    yieldstrength = parseFloat(document.getElementById('input5').value) * 1000000;
+    elasticity = parseFloat(document.getElementById('input6').value) * 1000000000;
 
+    cvalue = conditionTable(boundarycondition, endcondition);
 
     innerbase = base - (thickness * 2);
     innerheight = height - (thickness * 2);
+    Ix = ((base * Math.pow(height,3)) / 12) - ((innerbase * Math.pow(innerheight,3)) / 12); //area moment of inertia, x axis
+    Iy = ((height * Math.pow(base,3)) / 12) - ((innerheight * Math.pow(innerbase,3)) / 12); //area moment of inertia, y axis
+    Imin = Math.min(Ix,Iy);
+    area = (base * height) - (innerbase * innerheight); //area of hollow rectangle
+    gyrationradius = Math.sqrt(Imin / area);
+    determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
+    slendernessratio = length / gyrationradius;
+
+    technique = techniqueDetermination(slendernessratio, determiningslenderness);
+
+    if (technique === 0){
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / (slendernessratio * 2);
+        criticalload = sigmacritical * area;
+    }
+    if (technique === 1){
+        sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
+        criticalload = sigmacritical * area;
+    }
+    factorofsafety = yieldstrength / sigmacritical;
+
+    document.getElementById('sigmacritical').innerHTML = sigmacritical;
+    document.getElementById('criticalload').innerHTML = criticalload;
+    document.getElementById('fos').innerHTML = factorofsafety;
+}
+
+function solidRectangleColumnFailure(){
+    var base, height, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
+
+    boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
+    endcondition = parseFloat(document.getElementById('endcondition-selection').value);
+    base = parseFloat(document.getElementById('input1').value) / 1000;
+    height = parseFloat(document.getElementById('input2').value) / 1000;
+    length = parseFloatr(document.getElementById('input3').value);
+    yieldstrength = parseFloat(document.getElementById('input4').value) * 1000000;
+    elasticity = parseFloat(document.getElementById('input5').value) * 1000000000;
+
+    cvalue = conditionTable(boundarycondition, endcondition);
+}
+function hollowCircleColumnFailure(){
+    var diameter, thickness, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
+
+    boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
+    endcondition = parseFloat(document.getElementById('endcondition-selection').value);
+    diameter = parseFloat(document.getElementById('input1').value) / 1000;
+    thickness = parseFloat(document.getElementById('input2').value) / 1000;
+    length = parseFloat(document.getElementById('input3').value);
+    yieldstrength = parseFloat(document.getElementById('input4').value) * 1000000;
+    elasticity = parseFloat(document.getElementById('input5').value) * 1000000000;
+
+    cvalue = conditionTable(boundarycondition, endcondition);
+}
+function solidCircleColumnFailure(){
+    var diameter, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
+
+    boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
+    endcondition = parseFloat(document.getElementById('endcondition-selection').value);
+    diameter = parseFloat(document.getElementById('input1').value) / 1000;
+    length = parseFloat(document.getElementById('input2').value);
+    yieldstrength = parseFloat(document.getElementById('input3').value) * 1000000;
+    elasticity = parseFloat(document.getElementById('input4').value) * 1000000000;
+
+    cvalue = conditionTable(boundarycondition, endcondition);
+}
+function symmetricalIBeamColumnFailure(){
+    var height, innerheight, width, base, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
+
+    boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
+    endcondition = parseFloat(document.getElementById('endcondition-selection').value);
+    height = parseFloat(document.getElementById('input1').value) / 1000;
+    innerheight = parseFloat(document.getElementById('input2').value) / 1000;
+    width = parseFloat(document.getElementById('input3').value) / 1000;
+    base = parseFloat(document.getElementById('input4').value) / 1000;
+    length = parseFloat(document.getElementById('input5').value);
+    yieldstrength = parseFloat(document.getElementById('input6').value) * 1000000;
+    elasticity = parseFloat(document.getElementById('input7').value) * 1000000000;
 
     cvalue = conditionTable(boundarycondition, endcondition);
 }
 
-function solidRectangleColumnFailure(){}
-function hollowCircleColumnFailure(){}
-function solidCircleColumnFailure(){}
-function symmetricalIBeamColumnFailure(){}
-
-function conditionTable(boundarycondition, endcondition){
+function conditionTable(boundaryCondition, endCondition){
     var value;
-    if (boundarycondition === 0){
+    if (boundaryCondition === 0){
         value = [.25, .25, .25];
     }
-    if (boundarycondition === 1){
+    if (boundaryCondition === 1){
         value = [1, 1, 1];
     }
-    if (boundarycondition === 2){
+    if (boundaryCondition === 2){
         value = [2, 1, 1.2];
     }
-    if (boundarycondition === 3){
+    if (boundaryCondition === 3){
         value = [4, 1, 1.2];
     }
-    return value[endcondition];
+    return value[endCondition];
+}
+
+function techniqueDetermination(slendernessRatio, determiningSlenderness){
+    var value;
+    if (slendernessRatio > determiningSlenderness){
+        value = 0; //euler
+    } else {
+        value = 1; //johnson
+    }
+    if (value === 0){
+        console.log('euler');
+    } else {
+        console.log('johnson');
+    }
+    return value;
 }
