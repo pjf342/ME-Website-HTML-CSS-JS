@@ -1,6 +1,7 @@
 document.getElementById('geometry-selection').addEventListener('change',parameters);
 
 const button = document.getElementById('submit-btn').addEventListener('click', columnFailure);
+
 function resetInputField(){
     document.getElementById('input1').value = 0;
     document.getElementById('input2').value = 0;
@@ -162,7 +163,7 @@ function hollowRectangleColumnFailure(){
     technique = techniqueDetermination(slendernessratio, determiningslenderness);
 
     if (technique === 0){
-        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / (slendernessratio * 2);
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
         criticalload = sigmacritical * area;
     }
     if (technique === 1){
@@ -183,11 +184,35 @@ function solidRectangleColumnFailure(){
     endcondition = parseFloat(document.getElementById('endcondition-selection').value);
     base = parseFloat(document.getElementById('input1').value) / 1000;
     height = parseFloat(document.getElementById('input2').value) / 1000;
-    length = parseFloatr(document.getElementById('input3').value);
+    length = parseFloat(document.getElementById('input3').value);
     yieldstrength = parseFloat(document.getElementById('input4').value) * 1000000;
     elasticity = parseFloat(document.getElementById('input5').value) * 1000000000;
 
     cvalue = conditionTable(boundarycondition, endcondition);
+
+    Ix = (base * Math.pow(height,3)) / 12; //area moment of inertia, x axis
+    Iy = (height * Math.pow(base,3)) / 12; //area moment of inertia, y axis
+    Imin = Math.min(Ix,Iy);
+    area = (base * height); //area of rectangle
+    gyrationradius = Math.sqrt(Imin / area);
+    determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
+    slendernessratio = length / gyrationradius;
+
+    technique = techniqueDetermination(slendernessratio, determiningslenderness);
+
+    if (technique === 0){
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+        criticalload = sigmacritical * area;
+    }
+    if (technique === 1){
+        sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
+        criticalload = sigmacritical * area;
+    }
+    factorofsafety = yieldstrength / sigmacritical;
+
+    document.getElementById('sigmacritical').innerHTML = sigmacritical;
+    document.getElementById('criticalload').innerHTML = criticalload;
+    document.getElementById('fos').innerHTML = factorofsafety;
 }
 function hollowCircleColumnFailure(){
     var diameter, thickness, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
