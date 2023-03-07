@@ -135,10 +135,6 @@ function columnFailure() {
 }
 
 function hollowRectangleColumnFailure(){
-    var base, height, thickness, length, yieldstrength, elasticity, boundarycondition, endcondition, innerbase,
-    innerheight, cvalue, determiningslenderness, slendernessratio, Ix, Iy, Imin, area, gyrationradius, sigmacritical,
-    criticalload, technique, factorofsafety;
-
     boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
     endcondition = parseFloat(document.getElementById('endcondition-selection').value);
     base = parseFloat(document.getElementById('input1').value) / 1000;
@@ -178,8 +174,6 @@ function hollowRectangleColumnFailure(){
 }
 
 function solidRectangleColumnFailure(){
-    var base, height, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
-
     boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
     endcondition = parseFloat(document.getElementById('endcondition-selection').value);
     base = parseFloat(document.getElementById('input1').value) / 1000;
