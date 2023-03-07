@@ -51,16 +51,17 @@ body{
   height: 75px;
   border-radius: 50px;
   margin-left: 50px;
-  transition: transform 1s ease-in-out;
+  transition: transform .3s ease-in-out;
 }
 
 .logo-container img{
   width: 75px;
   height: 100%;
   border-radius: 50px;
+  border: 3px solid var(--buttonColor);
 }
 .logo-container:hover{
-  transform: rotate(360deg);
+  transform: scale(1.05);
 }
 .dropdown-container{
   display: flex;
@@ -128,18 +129,16 @@ body{
 display: none;
 position: absolute;
 }
-
 .dropdown-container .hover-div:hover .list-container{
   display: flex;
   flex-direction: column;
   min-width: 100px;
-  margin-top: 300px;
+  margin-top: 385px;
 }
 
 .item1{
-  margin-bottom: 0;
   width: 200px;
-  height: 50px;
+  height: fit-content;
   background-color: var(--buttonColor);
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
