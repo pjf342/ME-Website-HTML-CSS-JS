@@ -168,9 +168,9 @@ function hollowRectangleColumnFailure(){
     }
     factorofsafety = yieldstrength / sigmacritical;
 
-    document.getElementById('sigmacritical').innerHTML = sigmacritical;
-    document.getElementById('criticalload').innerHTML = criticalload;
-    document.getElementById('fos').innerHTML = factorofsafety;
+    document.getElementById('sigmacritical').innerHTML = sigmacritical.toFixed(3);
+    document.getElementById('criticalload').innerHTML = criticalload.toFixed(3);
+    document.getElementById('fos').innerHTML = factorofsafety.toFixed(3);
 }
 
 function solidRectangleColumnFailure(){
@@ -204,13 +204,11 @@ function solidRectangleColumnFailure(){
     }
     factorofsafety = yieldstrength / sigmacritical;
 
-    document.getElementById('sigmacritical').innerHTML = sigmacritical;
-    document.getElementById('criticalload').innerHTML = criticalload;
-    document.getElementById('fos').innerHTML = factorofsafety;
+    document.getElementById('sigmacritical').innerHTML = sigmacritical.toFixed(3);
+    document.getElementById('criticalload').innerHTML = criticalload.toFixed(3);
+    document.getElementById('fos').innerHTML = factorofsafety.toFixed(3);
 }
 function hollowCircleColumnFailure(){
-    var diameter, thickness, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
-
     boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
     endcondition = parseFloat(document.getElementById('endcondition-selection').value);
     diameter = parseFloat(document.getElementById('input1').value) / 1000;
@@ -220,6 +218,31 @@ function hollowCircleColumnFailure(){
     elasticity = parseFloat(document.getElementById('input5').value) * 1000000000;
 
     cvalue = conditionTable(boundarycondition, endcondition);
+
+    innerdiameter = diameter - (thickness * 2);
+    I = (Math.PI * (Math.pow(diameter, 4) - Math.pow(innerdiameter, 4))) / 64; //area moment of inertia
+    area = (Math.PI * Math.pow((diameter/2), 2)) - (Math.PI * Math.pow((innerdiameter/2), 2)); //area of circle
+    gyrationradius = Math.sqrt(I / area);
+    determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
+    slendernessratio = length / gyrationradius;
+
+    technique = techniqueDetermination(slendernessratio, determiningslenderness);
+
+    if (technique === 0){
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+        criticalload = sigmacritical * area;
+    }
+    if (technique === 1){
+        sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
+        criticalload = sigmacritical * area;
+    }
+    factorofsafety = yieldstrength / sigmacritical;
+
+    document.getElementById('sigmacritical').innerHTML = sigmacritical.toFixed(3);
+    document.getElementById('criticalload').innerHTML = criticalload.toFixed(3);
+    document.getElementById('fos').innerHTML = factorofsafety.toFixed(3);
+
+
 }
 function solidCircleColumnFailure(){
     var diameter, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
@@ -232,6 +255,28 @@ function solidCircleColumnFailure(){
     elasticity = parseFloat(document.getElementById('input4').value) * 1000000000;
 
     cvalue = conditionTable(boundarycondition, endcondition);
+
+    I = (Math.PI * Math.pow(diameter, 4)) / 64; //area moment of inertia
+    area = (Math.PI * Math.pow((diameter/2), 2)); //area of circle
+    gyrationradius = Math.sqrt(I / area);
+    determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
+    slendernessratio = length / gyrationradius;
+
+    technique = techniqueDetermination(slendernessratio, determiningslenderness);
+
+    if (technique === 0){
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+        criticalload = sigmacritical * area;
+    }
+    if (technique === 1){
+        sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
+        criticalload = sigmacritical * area;
+    }
+    factorofsafety = yieldstrength / sigmacritical;
+
+    document.getElementById('sigmacritical').innerHTML = sigmacritical.toFixed(3);
+    document.getElementById('criticalload').innerHTML = criticalload.toFixed(3);
+    document.getElementById('fos').innerHTML = factorofsafety.toFixed(3);
 }
 function symmetricalIBeamColumnFailure(){
     var height, innerheight, width, base, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
@@ -247,6 +292,31 @@ function symmetricalIBeamColumnFailure(){
     elasticity = parseFloat(document.getElementById('input7').value) * 1000000000;
 
     cvalue = conditionTable(boundarycondition, endcondition);
+
+    Ix = ((width * Math.pow(innerheight, 3)) / 12) + ((base * 12) * (Math.pow(height, 3) - Math.pow(innerheight, 3)));
+    Iy = ((innerheight * Math.pow(width, 3)) / 12) + ((Math.pow(base, 3) / 12) * (height - innerheight));
+    Imin = Math.min(Ix, Iy);
+    area = (2 * base * ((height - innerheight) / 2)) + (innerheight * width);
+    gyrationradius = Math.sqrt(Imin / area);
+    determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
+    slendernessratio = length / gyrationradius;
+
+    technique = techniqueDetermination(slendernessratio, determiningslenderness);
+
+    if (technique === 0){
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+        criticalload = sigmacritical * area;
+    }
+    if (technique === 1){
+        sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
+        criticalload = sigmacritical * area;
+    }
+    factorofsafety = yieldstrength / sigmacritical;
+
+    document.getElementById('sigmacritical').innerHTML = sigmacritical.toFixed(3);
+    document.getElementById('criticalload').innerHTML = criticalload.toFixed(3);
+    document.getElementById('fos').innerHTML = factorofsafety.toFixed(3);
+
 }
 
 function conditionTable(boundaryCondition, endCondition){
