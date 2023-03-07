@@ -611,8 +611,15 @@ input::-webkit-inner-spin-button {
   border-radius: 30px;
   border: 2px solid black;
 }
+.calculator-card-container img:hover{
+border: 1.5px solid var(--subColor);
+}
 .calculator-card-container p{
 width: 100%;
+font-size: 20px;
+}
+.calculator-card-container h2{
+  font-size: 30px;
 }
 .calculator-card-container button{
   width: 150px;
