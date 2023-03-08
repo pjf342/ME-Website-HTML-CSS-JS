@@ -4,12 +4,12 @@ function pressureVesselStresses(){
     var surface, capped, pouter, pinner, douter, dinner, thickness, radius, pressure, thicknessratio, 
     thickwall, tangentialstress, radialstress, axialstress, rinner, router;
 
-    surface = Math.floor(document.getElementById('surface-selection').value);
-    capped = Math.floor(document.getElementById('capped-selection').value);
-    pouter = Math.floor(document.getElementById('pouter-value').value);
-    pinner = Math.floor(document.getElementById('pinner-value').value);
-    douter = Math.floor(document.getElementById('douter-value').value) / 1000;
-    dinner = Math.floor(document.getElementById('dinner-value').value) / 1000;
+    surface = parseFloat(document.getElementById('surface-selection').value);
+    capped = parseFloat(document.getElementById('capped-selection').value);
+    pouter = parseFloat(document.getElementById('pouter-value').value);
+    pinner = parseFloat(document.getElementById('pinner-value').value);
+    douter = parseFloat(document.getElementById('douter-value').value) / 1000;
+    dinner = parseFloat(document.getElementById('dinner-value').value) / 1000;
 
     thickness = (douter - dinner) / 2;
     router = douter / 2;
