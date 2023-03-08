@@ -625,9 +625,12 @@ option {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
-.submission-container button:hover {
+.submission-container button:hover{
   background-color: var(--buttonHoverColor);
   color: var(--fontColor);
+}
+#scw-submission-container{
+  width: fit-content;
 }
 
 .submission-input-container {
