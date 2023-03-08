@@ -23,14 +23,14 @@ function principalStresses() {
     shearPhi1 = radiansToDegrees(Math.atan(-(((sX - sY) / 2) / tXY))) / 2; //angle to reach max shear stress 1
     shearPhi2 = shearPhi1 + 90; //angle to reach max shear stress 1
     
-    document.getElementById('sAvg').innerText = sAvg;
-    document.getElementById('s1').innerText = s1;
-    document.getElementById('s2').innerText = s2;
-    document.getElementById('phi1').innerText = phi1;
-    document.getElementById('phi2').innerText = phi2;
-    document.getElementById('tMax').innerText = tMax;
-    document.getElementById('shearPhi1').innerText = shearPhi1;
-    document.getElementById('shearPhi2').innerText = shearPhi2;
+    document.getElementById('sAvg').innerText = sAvg.toFixed(3);
+    document.getElementById('s1').innerText = s1.toFixed(3);
+    document.getElementById('s2').innerText = s2.toFixed(3);
+    document.getElementById('phi1').innerText = phi1.toFixed(3);
+    document.getElementById('phi2').innerText = phi2.toFixed(3);
+    document.getElementById('tMax').innerText = tMax.toFixed(3);
+    document.getElementById('shearPhi1').innerText = shearPhi1.toFixed(3);
+    document.getElementById('shearPhi2').innerText = shearPhi2.toFixed(3);
 } 
 
 function radiansToDegrees(radians){
@@ -42,37 +42,3 @@ function degreesToRadians(degrees){
 function rotation(angle){
     return angle > 0;
 }
-
-// Query the submit button
-// const btn = document.querySelector('#submit-btn');
-
-// Query all boxes
-// const boxes = document.querySelectorAll('.box');
-
-// For every input box add a listener when a value is changed.
-// boxes.forEach(box => {
-//     box.addEventListener('input', event => {
-//         // console.log(event.target.value);
-//         event
-//     })
-
-    
-// })
-
-// Add lister to calculate button on click.
-// btn.addEventListener('click', () => {
-//     // console.log(boxes[0].value);
-//     // let sigX = Math.floor(boxes[0].value);  // String to Number type
-//     // let sigY = Math.floor(boxes[1].value);  
-//     // addSigmas(sigX, sigY);
-// });
-
-
-// Dummy Function to test listeners.
-// function addSigmas(sigX, sigY)
-// {
-//     // console.log(sigX + sigY);
-//     let tau = boxes[2];
-//     tau.value = (sigX + sigY);
-//     return tau.value;
-// }

@@ -36,7 +36,7 @@ function strengthAndColdWork(){
     newYieldStrength = coefficient * Math.pow(trueStrain, strainStrength);
     newUltimateStrength = ultimateStrength / (1 - coldWorkPercent);
 
-    document.getElementById('true-strain').innerHTML = trueStrain;
+    document.getElementById('true-strain').innerHTML = trueStrain.toFixed(3);
     document.getElementById('new-yield-strength').innerHTML = newYieldStrength.toFixed(3);
     document.getElementById('new-ultimate-strength').innerHTML = newUltimateStrength.toFixed(3);
 
