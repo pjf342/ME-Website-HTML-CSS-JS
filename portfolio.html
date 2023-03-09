@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,19 +19,27 @@
                 <a href="/index.html"><img src="/images/gearlogo.png" class="logo"></a>
             </div>
 
-            
-        
+
+
             <div class="dropdown-container">
                 <div class="hover-div">
                     <button><a href="/calculators.html">Calculators &#9660;</a></button>
                     <div class="list-container">
-                        <div class="item1"><a href="/principalstresses.html"><p>2D Principal Stresses</p></a></div>
-                        <div class="item1"><a href="/pressurevesselstress.html"><p>Cylinderical Pressure Vessel Stress</p></a></div>
-                        <div class="item1"><a href="/columnfailure.html"><p>Column Failure</p></a></div>
-                        <div class="item1"><a href="/strengthandcoldwork.html"><p>Strength and Cold Work</p></a></div>
-                            
+                        <div class="item1"><a href="/principalstresses.html">
+                                <p>2D Principal Stresses</p>
+                            </a></div>
+                        <div class="item1"><a href="/pressurevesselstress.html">
+                                <p>Cylinderical Pressure Vessel Stress</p>
+                            </a></div>
+                        <div class="item1"><a href="/columnfailure.html">
+                                <p>Column Failure</p>
+                            </a></div>
+                        <div class="item1"><a href="/strengthandcoldwork.html">
+                                <p>Strength and Cold Work</p>
+                            </a></div>
+
                     </div>
-                </div>   
+                </div>
             </div>
 
             <div class="links-container">
@@ -41,7 +50,7 @@
                 <div class="aboutme-container">
                     <button><a href="/aboutme.html">About Me</a></button>
                 </div>
-    
+
                 <div class="contact-container">
                     <button><a href="/contact.html">Contact</a></button>
                 </div>
@@ -54,23 +63,26 @@
                 <h1>Portfolio</h1>
             </div>
             <div class="portfolio-tabs-container">
-                <button class="tablink" onclick="openPortfolio(event, 'Levitate')" id="defaulttab">Levitate Technologies</button>
+                <button class="tablink" onclick="openPortfolio(event, 'Levitate')" id="defaulttab">Levitate
+                    Technologies</button>
                 <button class="tablink" onclick="openPortfolio(event, 'SDSU')">SDSU Research Assistant</button>
                 <button class="tablink" onclick="openPortfolio(event, 'Misc')">Miscellaneous Works</button>
-            </div>  
+            </div>
             <div id="Levitate" class="tabcontent">
                 <h1>Levitate Technologies, Inc - Senior Design&nbsp;&nbsp;&nbsp;
-                    (&nbsp;<a href="https://mechanical.sdsu.edu/designday/posters/moment-manipulating-arm-poster.pdf" target="_blank">Poster</a>&nbsp;)</h1>
-                <p> At Levitate Technologies, the task was to create a new mechanism for 
-                    arm rotation that can easily be integrated into their current arm support 
-                    system. The main goal for the design was to increase the cycles till failure 
-                    by switching to a inflexible mechanism. This goal was successfuly met using 
+                    (&nbsp;<a href="https://mechanical.sdsu.edu/designday/posters/moment-manipulating-arm-poster.pdf"
+                        target="_blank">Poster</a>&nbsp;)</h1>
+                <p> At Levitate Technologies, the task was to create a new mechanism for
+                    arm rotation that can easily be integrated into their current arm support
+                    system. The main goal for the design was to increase the cycles till failure
+                    by switching to a inflexible mechanism. This goal was successfuly met using
                     non-circular gears and a spiral torsion spring.
-                <br><br>
-                    The initial 2D design was developed in MATLAB. The data was exported into 
+                    <br><br>
+                    The initial 2D design was developed in MATLAB. The data was exported into
                     SOLIDWORKS to be converted into 3D. The gears were rapidly prototyped using
                     FDM 3D printing. The mechanism was tested using a torque tester and the results
-                    were plotted using Google Sheets</p>
+                    were plotted using Google Sheets
+                </p>
                 <div class="levitate-media-container">
                     <div class="levitate-images-container">
                         <img src="/images/matlab.PNG" alt="matlab">
@@ -81,7 +93,7 @@
                         <img src="/images/dataplot.PNG" alt="dataplot">
                     </div>
                     <div class="levitate-video-container">
-                        <video src="/video/testdemo.mp4" controls width="320" height="550" muted> 
+                        <video src="/video/testdemo.mp4" controls width="320" height="550" muted>
                             Torque Tester - Your browser does not support the video tag.
                         </video>
                     </div>
@@ -89,8 +101,8 @@
             </div>
             <div id="SDSU" class="tabcontent">
                 <h1>San Diego State University - Undergraduate Research Assistant</h1>
-                <p> At San Diego State University, I was an undergraduate research assistant. The first research 
-                    project was 3D printable biosensors. Designed various patterns to be FDM 3D printed using 
+                <p> At San Diego State University, I was an undergraduate research assistant. The first research
+                    project was 3D printable biosensors. Designed various patterns to be FDM 3D printed using
                     piezoelectric filament and performed basic static load analysis for displacement.
                 </p>
                 <div class="sdsu1-media-container">
@@ -98,9 +110,10 @@
                     <img src="/images/pattern2.PNG" alt="hubert">
                     <img src="/images/pattern3.PNG" alt="rectangluar">
                 </div>
-                <p> In another research project, I programmed an ESP32 microcontroller to wirelessly gather data from 
-                    various sensors simultaneously via bluetooth. Additionally, I developed a Python program with a GUI 
-                    to record and plot the data live, as well as preprocess the data for machine learning. The preprocessing 
+                <p> In another research project, I programmed an ESP32 microcontroller to wirelessly gather data from
+                    various sensors simultaneously via bluetooth. Additionally, I developed a Python program with a GUI
+                    to record and plot the data live, as well as preprocess the data for machine learning. The
+                    preprocessing
                     included data normalization and statistical feature extraction.
                 </p>
                 <div class="sdsu2-media-container">
@@ -108,8 +121,9 @@
                     <img src="/images/gui1.PNG" alt="gui1">
                 </div>
                 <p> In a continuation of the previous research project, I programmed ESP32 microcontroller to gather
-                    data from a 6-axis gyroscope+accelerometer sensor. I developed a Python program that recorded and 
-                    plotted the data live. The program also allowed the user to obtain the data wired via serial communication,
+                    data from a 6-axis gyroscope+accelerometer sensor. I developed a Python program that recorded and
+                    plotted the data live. The program also allowed the user to obtain the data wired via serial
+                    communication,
                     or wirelessly via a local Wi-Fi webserver established by the ESP32.
                 </p>
                 <div class="sdsu3-media-container">
@@ -121,8 +135,10 @@
             </div>
             <div id="Misc" class="tabcontent">
                 <h1>Miscellaneous Works</h1>
-                <p> I designed an external electronics enclosure for my 3D printer. This allows the 3D printer to be placed in an
-                    enclosure that is insulated and stops air draughts. This improves the print quality of parts using ABS filament,
+                <p> I designed an external electronics enclosure for my 3D printer. This allows the 3D printer to be
+                    placed in an
+                    enclosure that is insulated and stops air draughts. This improves the print quality of parts using
+                    ABS filament,
                     or any other filaments sensitive to temperature change.
                 </p>
                 <div class="enclosure-media-container">
@@ -155,7 +171,8 @@
                     <img src="/images/excel2.PNG" alt="excel2">
                     <img src="/images/excel3.PNG" alt="excel3">
                 </div>
-                <p> Various MATLAB functions developed for design problems as a student at San Diego State University.</p>
+                <p> Various MATLAB functions developed for design problems as a student at San Diego State University.
+                </p>
                 <div class="matlab-media-container">
                     <img src="/images/matlab1.PNG" alt="matlab1">
                     <img src="/images/matlab2.PNG" alt="matlab2">
@@ -168,11 +185,13 @@
                 <p>2023 - Design by</p><a href="mailto:patrick.fleckenstein@outlook.com">Patrick Fleckenstein</a>
             </div>
             <div class="marks-container">
-                <a href="https://www.linkedin.com/in/patrick-fleckenstein-00710b204/" target="_blank"><img src="/images/linkedin-mark.png" alt="linkedin-mark"></a>
-                <a href="https://github.com/pjf342" target="_blank"><img src="/images/github-mark-white.png" alt="github-mark-white"></a>
+                <a href="https://www.linkedin.com/in/patrick-fleckenstein-00710b204/" target="_blank"><img
+                        src="/images/linkedin-mark.png" alt="linkedin-mark"></a>
+                <a href="https://github.com/pjf342" target="_blank"><img src="/images/github-mark-white.png"
+                        alt="github-mark-white"></a>
             </div>
         </div>
-        
+
     </div>
     <script src="/javascript/portfolio-script.js"></script>
 </body>
