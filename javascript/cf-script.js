@@ -21,7 +21,7 @@ function parameters() {
         document.getElementById('inputlabel1').innerHTML = 'Base (mm)';
         document.getElementById('inputlabel2').innerHTML = 'Height (mm)';
         document.getElementById('inputlabel3').innerHTML = 'Thickness (mm)';
-        document.getElementById('inputlabel4').innerHTML = 'Length of Column(m)';
+        document.getElementById('inputlabel4').innerHTML = 'Length of Column (m)';
         document.getElementById('inputlabel5').innerHTML = 'Yield Strength (MPa)';
         document.getElementById('inputlabel6').innerHTML = 'Modulus of Elasticity (GPa)';
         document.getElementById('inputlabel7').innerHTML = '';
