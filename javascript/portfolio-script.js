@@ -8,7 +8,7 @@ function openPortfolio(event, portfoliocontent) {
 
     tablink = document.getElementsByClassName("tablink");
     for (i = 0; i < tablink.length; i++) {
-        tablink[i].className = tablink[i].className.replace(" active","");
+        tablink[i].className = tablink[i].className.replace(" active", "");
     }
 
     document.getElementById(portfoliocontent).style.display = "flex";

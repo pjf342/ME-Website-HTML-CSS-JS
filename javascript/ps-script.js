@@ -8,21 +8,21 @@ function principalStresses() {
     tXY = Math.floor(document.getElementById('tauXY').value); //shear
 
     sAvg = (sX + sY) / 2;
-    s1 = sAvg + Math.sqrt(Math.pow(((sX - sY) / 2), 2) + (Math.pow(tXY,2))); //first principal stress
-    s2 = sAvg - Math.sqrt(Math.pow(((sX - sY) / 2), 2) + (Math.pow(tXY,2))); //second principal stress
-    
+    s1 = sAvg + Math.sqrt(Math.pow(((sX - sY) / 2), 2) + (Math.pow(tXY, 2))); //first principal stress
+    s2 = sAvg - Math.sqrt(Math.pow(((sX - sY) / 2), 2) + (Math.pow(tXY, 2))); //second principal stress
+
     phi1 = radiansToDegrees(Math.atan(tXY / ((sX - sY) / 2))) / 2; //angle to reach principal stress 1
     phi2 = phi1 + 90; //angle to reach principal stress 2
     theta1 = phi1 * 2;
     theta2 = phi2 * 2;
     ccw = rotation(phi1);
     sXprime = (sX + sY / 2) + (((sX - sY) / 2) + Math.cos(2 * degreesToRadians(phi1)))
-    + (tXY * Math.sin(2 * degreesToRadians(phi1)));
+        + (tXY * Math.sin(2 * degreesToRadians(phi1)));
 
-    tMax = Math.sqrt(Math.pow(((sX - sY) / 2), 2) + (Math.pow(tXY,2))); //in-plane shear stress
+    tMax = Math.sqrt(Math.pow(((sX - sY) / 2), 2) + (Math.pow(tXY, 2))); //in-plane shear stress
     shearPhi1 = radiansToDegrees(Math.atan(-(((sX - sY) / 2) / tXY))) / 2; //angle to reach max shear stress 1
     shearPhi2 = shearPhi1 + 90; //angle to reach max shear stress 1
-    
+
     document.getElementById('sAvg').innerText = sAvg.toFixed(3);
     document.getElementById('s1').innerText = s1.toFixed(3);
     document.getElementById('s2').innerText = s2.toFixed(3);
@@ -31,14 +31,14 @@ function principalStresses() {
     document.getElementById('tMax').innerText = tMax.toFixed(3);
     document.getElementById('shearPhi1').innerText = shearPhi1.toFixed(3);
     document.getElementById('shearPhi2').innerText = shearPhi2.toFixed(3);
-} 
+}
 
-function radiansToDegrees(radians){
+function radiansToDegrees(radians) {
     return radians / (Math.PI / 180);
 }
-function degreesToRadians(degrees){
+function degreesToRadians(degrees) {
     return degrees * (Math.PI / 180);
 }
-function rotation(angle){
+function rotation(angle) {
     return angle > 0;
 }
