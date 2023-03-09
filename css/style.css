@@ -167,14 +167,11 @@ body {
 .footer {
   background-color: var(--mainColor);
   display: flex;
-  flex-direction: row;
   flex: 1;
 }
 
 .copyright-name-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
   align-self: center;
   justify-content: left;
@@ -242,7 +239,6 @@ body {
 
 .levitate-media-container {
   display: flex;
-  flex-direction: row;
 }
 
 .tabcontent,
@@ -334,7 +330,6 @@ body {
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   gap: 60px;
   width: 95%;
@@ -384,7 +379,6 @@ body {
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   gap: 150px;
   width: 95%;
@@ -403,7 +397,6 @@ body {
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   gap: 150px;
   width: 95%;
@@ -422,7 +415,6 @@ body {
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   gap: 100px;
   width: 95%;
@@ -441,7 +433,6 @@ body {
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   gap: 100px;
   width: 95%;
@@ -470,7 +461,6 @@ body {
 
 .contact-email-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -489,7 +479,6 @@ body {
 
 .contact-links-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 200px;
   align-items: center;
@@ -510,7 +499,6 @@ body {
 
 .carlatch-media-container {
   display: flex;
-  flex-direction: row;
   gap: 50px;
   justify-content: center;
   margin-bottom: 50px;
@@ -525,7 +513,6 @@ body {
 
 .cad-media-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
@@ -541,7 +528,6 @@ body {
 
 .excel-media-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
@@ -557,7 +543,6 @@ body {
 
 .matlab-media-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
@@ -573,7 +558,6 @@ body {
 
 .calculations-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -587,7 +571,6 @@ option {
 .submission-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   gap: 40px;
   width: 280px;
   height: max-content;
@@ -625,11 +608,12 @@ option {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
-.submission-container button:hover{
+.submission-container button:hover {
   background-color: var(--buttonHoverColor);
   color: var(--fontColor);
 }
-#scw-submission-container{
+
+#scw-submission-container {
   width: fit-content;
 }
 
@@ -642,7 +626,6 @@ option {
 .results-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   gap: 10px;
   width: max-content;
   height: max-content;
@@ -680,7 +663,6 @@ input::-webkit-inner-spin-button {
 
 .calculator-card-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 100px;
   justify-content: center;
@@ -739,8 +721,8 @@ input::-webkit-inner-spin-button {
 }
 
 .welcome-container {
-  margin-top: 200px;
-  width: 1000px;
+  margin-top: 120px;
+  width: 55%;
   height: max-content;
   display: flex;
   flex-direction: column;
