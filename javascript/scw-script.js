@@ -22,8 +22,8 @@ tableA22 = [
 ];
 
 function strengthAndColdWork(){
-    materialNumber = parseFloat(document.getElementById('material-number-selection').value);
-    coldWorkPercent = parseInt(document.getElementById('coldworkpercent-value').value) / 100;
+    materialNumber = parseInt(document.getElementById('material-number-selection').value);
+    coldWorkPercent = parseFloat(document.getElementById('coldworkpercent-value').value) / 100;
 
     yieldStrength = tableA22[3][materialNumber]; //MPa
     ultimateStrength = tableA22[4][materialNumber]; //MPa
