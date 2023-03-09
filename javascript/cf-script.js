@@ -1,8 +1,8 @@
-document.getElementById('geometry-selection').addEventListener('change',parameters);
+document.getElementById('geometry-selection').addEventListener('change', parameters);
 
 const button = document.getElementById('submit-btn').addEventListener('click', columnFailure);
 
-function resetInputField(){
+function resetInputField() {
     document.getElementById('input1').value = 0;
     document.getElementById('input2').value = 0;
     document.getElementById('input3').value = 0;
@@ -11,13 +11,13 @@ function resetInputField(){
     document.getElementById('input6').value = 0;
     document.getElementById('input7').value = 0;
 }
-function parameters(){
+function parameters() {
     resetInputField();
     var geometry;
 
     geometry = Math.floor(document.getElementById('geometry-selection').value);
 
-    if (geometry === 0){
+    if (geometry === 0) {
         document.getElementById('inputlabel1').innerHTML = 'Base (mm)';
         document.getElementById('inputlabel2').innerHTML = 'Height (mm)';
         document.getElementById('inputlabel3').innerHTML = 'Thickness (mm)';
@@ -34,7 +34,7 @@ function parameters(){
         document.getElementById('input6').style.display = 'flex';
         document.getElementById('input7').style.display = 'none';
     }
-    if (geometry === 1){
+    if (geometry === 1) {
         document.getElementById('inputlabel1').innerHTML = 'Base (mm)';
         document.getElementById('inputlabel2').innerHTML = 'Height (mm)';
         document.getElementById('inputlabel3').innerHTML = 'Length of Column (m)';
@@ -51,7 +51,7 @@ function parameters(){
         document.getElementById('input6').style.display = 'none';
         document.getElementById('input7').style.display = 'none';
     }
-    if (geometry === 2){
+    if (geometry === 2) {
         document.getElementById('inputlabel1').innerHTML = 'Diameter (mm)';
         document.getElementById('inputlabel2').innerHTML = 'Thickness (mm)';
         document.getElementById('inputlabel3').innerHTML = 'Length of Column (m)';
@@ -59,7 +59,7 @@ function parameters(){
         document.getElementById('inputlabel5').innerHTML = 'Modulus of Elasticity (GPa)';
         document.getElementById('inputlabel6').innerHTML = '';
         document.getElementById('inputlabel7').innerHTML = '';
- 
+
 
         document.getElementById('input1').style.display = 'flex';
         document.getElementById('input2').style.display = 'flex';
@@ -69,7 +69,7 @@ function parameters(){
         document.getElementById('input6').style.display = 'none';
         document.getElementById('input7').style.display = 'none';
     }
-    if (geometry === 3){
+    if (geometry === 3) {
         document.getElementById('inputlabel1').innerHTML = 'Diameter (mm)';
         document.getElementById('inputlabel2').innerHTML = 'Length of Column (m)';
         document.getElementById('inputlabel3').innerHTML = 'Yield Strength (MPa)';
@@ -77,7 +77,7 @@ function parameters(){
         document.getElementById('inputlabel5').innerHTML = '';
         document.getElementById('inputlabel6').innerHTML = '';
         document.getElementById('inputlabel7').innerHTML = '';
- 
+
 
         document.getElementById('input1').style.display = 'flex';
         document.getElementById('input2').style.display = 'flex';
@@ -87,7 +87,7 @@ function parameters(){
         document.getElementById('input6').style.display = 'none';
         document.getElementById('input7').style.display = 'none';
     }
-    if (geometry === 4){
+    if (geometry === 4) {
         document.getElementById('inputlabel1').innerHTML = 'Height (mm)';
         document.getElementById('inputlabel2').innerHTML = 'Flange-flange Inner Face Height (mm)';
         document.getElementById('inputlabel3').innerHTML = 'Width of I-beam (mm)';
@@ -95,7 +95,7 @@ function parameters(){
         document.getElementById('inputlabel5').innerHTML = 'Length of Column (m)';
         document.getElementById('inputlabel6').innerHTML = 'Yield Strength (MPa)';
         document.getElementById('inputlabel7').innerHTML = 'Modulus of Elasticity (GPa)';
- 
+
 
         document.getElementById('input1').style.display = 'flex';
         document.getElementById('input2').style.display = 'flex';
@@ -105,7 +105,7 @@ function parameters(){
         document.getElementById('input6').style.display = 'flex';
         document.getElementById('input7').style.display = 'flex';
     }
-    
+
 }
 function columnFailure() {
     var geometry;
@@ -134,7 +134,7 @@ function columnFailure() {
     }
 }
 
-function hollowRectangleColumnFailure(){
+function hollowRectangleColumnFailure() {
     boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
     endcondition = parseFloat(document.getElementById('endcondition-selection').value);
     base = parseFloat(document.getElementById('input1').value) / 1000;
@@ -148,9 +148,9 @@ function hollowRectangleColumnFailure(){
 
     innerbase = base - (thickness * 2);
     innerheight = height - (thickness * 2);
-    Ix = ((base * Math.pow(height,3)) / 12) - ((innerbase * Math.pow(innerheight,3)) / 12); //area moment of inertia, x axis
-    Iy = ((height * Math.pow(base,3)) / 12) - ((innerheight * Math.pow(innerbase,3)) / 12); //area moment of inertia, y axis
-    Imin = Math.min(Ix,Iy);
+    Ix = ((base * Math.pow(height, 3)) / 12) - ((innerbase * Math.pow(innerheight, 3)) / 12); //area moment of inertia, x axis
+    Iy = ((height * Math.pow(base, 3)) / 12) - ((innerheight * Math.pow(innerbase, 3)) / 12); //area moment of inertia, y axis
+    Imin = Math.min(Ix, Iy);
     area = (base * height) - (innerbase * innerheight); //area of hollow rectangle
     gyrationradius = Math.sqrt(Imin / area);
     determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
@@ -158,11 +158,11 @@ function hollowRectangleColumnFailure(){
 
     technique = techniqueDetermination(slendernessratio, determiningslenderness);
 
-    if (technique === 0){
-        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+    if (technique === 0) {
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio, 2);
         criticalload = sigmacritical * area;
     }
-    if (technique === 1){
+    if (technique === 1) {
         sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
         criticalload = sigmacritical * area;
     }
@@ -173,7 +173,7 @@ function hollowRectangleColumnFailure(){
     document.getElementById('fos').innerHTML = factorofsafety.toFixed(3);
 }
 
-function solidRectangleColumnFailure(){
+function solidRectangleColumnFailure() {
     boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
     endcondition = parseFloat(document.getElementById('endcondition-selection').value);
     base = parseFloat(document.getElementById('input1').value) / 1000;
@@ -184,9 +184,9 @@ function solidRectangleColumnFailure(){
 
     cvalue = conditionTable(boundarycondition, endcondition);
 
-    Ix = (base * Math.pow(height,3)) / 12; //area moment of inertia, x axis
-    Iy = (height * Math.pow(base,3)) / 12; //area moment of inertia, y axis
-    Imin = Math.min(Ix,Iy);
+    Ix = (base * Math.pow(height, 3)) / 12; //area moment of inertia, x axis
+    Iy = (height * Math.pow(base, 3)) / 12; //area moment of inertia, y axis
+    Imin = Math.min(Ix, Iy);
     area = (base * height); //area of rectangle
     gyrationradius = Math.sqrt(Imin / area);
     determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
@@ -194,11 +194,11 @@ function solidRectangleColumnFailure(){
 
     technique = techniqueDetermination(slendernessratio, determiningslenderness);
 
-    if (technique === 0){
-        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+    if (technique === 0) {
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio, 2);
         criticalload = sigmacritical * area;
     }
-    if (technique === 1){
+    if (technique === 1) {
         sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
         criticalload = sigmacritical * area;
     }
@@ -208,7 +208,7 @@ function solidRectangleColumnFailure(){
     document.getElementById('criticalload').innerHTML = criticalload.toFixed(3);
     document.getElementById('fos').innerHTML = factorofsafety.toFixed(3);
 }
-function hollowCircleColumnFailure(){
+function hollowCircleColumnFailure() {
     boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
     endcondition = parseFloat(document.getElementById('endcondition-selection').value);
     diameter = parseFloat(document.getElementById('input1').value) / 1000;
@@ -221,18 +221,18 @@ function hollowCircleColumnFailure(){
 
     innerdiameter = diameter - (thickness * 2);
     I = (Math.PI * (Math.pow(diameter, 4) - Math.pow(innerdiameter, 4))) / 64; //area moment of inertia
-    area = (Math.PI * Math.pow((diameter/2), 2)) - (Math.PI * Math.pow((innerdiameter/2), 2)); //area of circle
+    area = (Math.PI * Math.pow((diameter / 2), 2)) - (Math.PI * Math.pow((innerdiameter / 2), 2)); //area of circle
     gyrationradius = Math.sqrt(I / area);
     determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
     slendernessratio = length / gyrationradius;
 
     technique = techniqueDetermination(slendernessratio, determiningslenderness);
 
-    if (technique === 0){
-        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+    if (technique === 0) {
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio, 2);
         criticalload = sigmacritical * area;
     }
-    if (technique === 1){
+    if (technique === 1) {
         sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
         criticalload = sigmacritical * area;
     }
@@ -244,7 +244,7 @@ function hollowCircleColumnFailure(){
 
 
 }
-function solidCircleColumnFailure(){
+function solidCircleColumnFailure() {
     var diameter, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
 
     boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
@@ -257,18 +257,18 @@ function solidCircleColumnFailure(){
     cvalue = conditionTable(boundarycondition, endcondition);
 
     I = (Math.PI * Math.pow(diameter, 4)) / 64; //area moment of inertia
-    area = (Math.PI * Math.pow((diameter/2), 2)); //area of circle
+    area = (Math.PI * Math.pow((diameter / 2), 2)); //area of circle
     gyrationradius = Math.sqrt(I / area);
     determiningslenderness = Math.sqrt((2 * (2 * Math.PI) * cvalue * elasticity) / yieldstrength);
     slendernessratio = length / gyrationradius;
 
     technique = techniqueDetermination(slendernessratio, determiningslenderness);
 
-    if (technique === 0){
-        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+    if (technique === 0) {
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio, 2);
         criticalload = sigmacritical * area;
     }
-    if (technique === 1){
+    if (technique === 1) {
         sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
         criticalload = sigmacritical * area;
     }
@@ -278,7 +278,7 @@ function solidCircleColumnFailure(){
     document.getElementById('criticalload').innerHTML = criticalload.toFixed(3);
     document.getElementById('fos').innerHTML = factorofsafety.toFixed(3);
 }
-function symmetricalIBeamColumnFailure(){
+function symmetricalIBeamColumnFailure() {
     var height, innerheight, width, base, length, yieldstrength, elasticity, boundarycondition, endcondition, cvalue;
 
     boundarycondition = parseFloat(document.getElementById('boundarycondition-selection').value);
@@ -303,11 +303,11 @@ function symmetricalIBeamColumnFailure(){
 
     technique = techniqueDetermination(slendernessratio, determiningslenderness);
 
-    if (technique === 0){
-        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio,2);
+    if (technique === 0) {
+        sigmacritical = (cvalue * elasticity * 2 * Math.PI) / Math.pow(slendernessratio, 2);
         criticalload = sigmacritical * area;
     }
-    if (technique === 1){
+    if (technique === 1) {
         sigmacritical = yieldstrength - ((1 / (cvalue * elasticity)) * Math.pow((yieldstrength * length) / (2 * Math.PI * gyrationradius), 2))
         criticalload = sigmacritical * area;
     }
@@ -319,33 +319,30 @@ function symmetricalIBeamColumnFailure(){
 
 }
 
-function conditionTable(boundaryCondition, endCondition){
+function conditionTable(boundaryCondition, endCondition) {
     var value;
-    if (boundaryCondition === 0){
+    if (boundaryCondition === 0) {
         value = [.25, .25, .25];
     }
-    if (boundaryCondition === 1){
+    if (boundaryCondition === 1) {
         value = [1, 1, 1];
     }
-    if (boundaryCondition === 2){
+    if (boundaryCondition === 2) {
         value = [2, 1, 1.2];
     }
-    if (boundaryCondition === 3){
+    if (boundaryCondition === 3) {
         value = [4, 1, 1.2];
     }
     return value[endCondition];
 }
 
-function techniqueDetermination(slendernessRatio, determiningSlenderness){
+function techniqueDetermination(slendernessRatio, determiningSlenderness) {
     var value;
-    if (slendernessRatio > determiningSlenderness){
-        value = 0; //euler
-    } else {
-        value = 1; //johnson
-    }
-    if (value === 0){
+    if (slendernessRatio > determiningSlenderness) {
+        value = 0;
         console.log('euler');
     } else {
+        value = 1; //johnson
         console.log('johnson');
     }
     return value;
